@@ -6,18 +6,15 @@ import pandas as pd
 url = 'https://poligonocabezobeaza.com/directorio'
 
 # Encabezados y cookies para la solicitud HTTP
+
 headers = {
     'Host': 'poligonocabezobeaza.com',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8',
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:129.0) Gecko/20100101 Firefox/129.0'
 }
-cookies = {
-    'sabai_directory_view': 'list',
-    'some_cookie_name': 'some_value'  # Reemplaza con cookies correctas si es necesario
-}
 
 # Solicitud HTTP
-respuesta = requests.get(url, headers=headers, cookies=cookies)
+respuesta = requests.get(url, headers=headers)
 
 # Parseo del contenido HTML
 soup = BeautifulSoup(respuesta.content, 'html.parser')
